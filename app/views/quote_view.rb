@@ -21,6 +21,12 @@ class QuoteView
   def error_screen
     puts "Please select a valid option."
   end
+  
+  def display(ar_quote_obj)
+    ar_quote_obj.each do |quote_obj|
+      puts "#{quote_obj.message} - #{quote_obj.author}"
+    end
+  end
 
   def random_display(quote_obj)
     puts "#{quote_obj.text}  - #{quote_obj.author}"
