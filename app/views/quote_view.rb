@@ -1,4 +1,5 @@
 class QuoteView
+  class << self
   def intro_list_commands
     puts "Welcome to Quot.ly! a random quote to lighten up your day :)"
     puts "Pick an option:"
