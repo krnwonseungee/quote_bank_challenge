@@ -17,6 +17,10 @@ class QuoteView
     puts "LIST"
     puts "QUIT"
   end
+  
+  def error_screen
+    puts "Please select a valid option."
+  end
 
   def random_display(quote_obj)
     puts "#{quote_obj.text}  - #{quote_obj.author}"
