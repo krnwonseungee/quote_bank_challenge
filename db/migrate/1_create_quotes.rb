@@ -5,7 +5,7 @@ class CreateQuotes < ActiveRecord::Migration
     create_table :quotes do |t|
       t.string :author
       t.string :text
-      t.belongs_to :categories
+      t.belongs_to :category
       t.timestamps
     end
   end
