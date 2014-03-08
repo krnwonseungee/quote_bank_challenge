@@ -12,7 +12,7 @@ class QuoteView
 
     def return_options_screen
       puts "Pick an option:"
-      puts "ADD ["quote"] [author]  (e.g. ADD \"this quote\" author name)"
+      puts "ADD [\"quote\"] [author]  (e.g. ADD \"this quote\" author name)"
       puts "DELETE [id]"
       puts "RANDOM"
       puts "LIST"
