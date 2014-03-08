@@ -17,7 +17,7 @@ class Controller
         ar_quote_obj = Quote.find(rand(Quote.all.length)+1)
         QuoteView.display(ar_quote_obj)
       when "list"
-        QuoteView.display(Quote.all)
+        QuoteView.display_all(Quote.all)
       when "quit"
         QuoteView.exit_screen
         return false
