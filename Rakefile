@@ -9,6 +9,12 @@ task "db:create" do
   touch DB_PATH
 end
 
+desc "seed the database"
+task "db:seed" do
+  puts "creating new data in the database"
+  require APP_ROOT.join('db', 'seeds.rb')
+end
+
 desc "drop the database"
 task "db:drop" do
   puts "Deleting #{DB_PATH}..."
