@@ -1,16 +1,19 @@
 class QuoteView
   class << self
     def welcome_message
+      puts ""
       puts "Welcome to Quot.ly! a random quote to lighten up your day :)"
     end
 
     def return_options_screen
+      puts ""
       puts "Pick an option:"
       puts "ADD [\"quote\"] [author]  (e.g. ADD \"this quote\" author name)"
       puts "DELETE [id]"
       puts "RANDOM"
       puts "LIST"
       puts "QUIT"
+      print "input: "
     end
 
     def error_screen
