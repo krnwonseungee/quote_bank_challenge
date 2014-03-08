@@ -15,6 +15,12 @@ task "db:drop" do
   rm_f DB_PATH
 end
 
+desc "seed the database"
+task "db:seed" do
+  puts "creating new data in the database"
+  require APP_ROOT.join('db', 'seeds.rb')
+end
+
 desc "migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
 task "db:migrate" do
   ActiveRecord::Migrator.migrations_paths << File.dirname(__FILE__) + 'db/migrate'
@@ -35,6 +41,7 @@ task "run" do
 end
 
 desc "Run the specs"
-RSpec::Core::RakeTask.new(:specs)
+RSpec::Core::RakeTask.new(:spec)
 
 task :default  => :specs
+
