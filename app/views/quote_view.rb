@@ -12,7 +12,7 @@ class QuoteView
 
     def return_options_screen
       puts "Pick an option:"
-      puts "ADD"
+      puts "ADD (e.g. ADD "This is a quote." author)
       puts "DELETE"
       puts "RANDOM"
       puts "LIST"
@@ -25,7 +25,7 @@ class QuoteView
 
     def display(ar_quote_obj)
       ar_quote_obj.each do |quote_obj|
-        puts "#{quote_obj.text} - #{quote_obj.author}"
+        puts "#{quote_obj.text} - #{quote_obj.author} #{quote_obj.id}"
       end
     end
 
