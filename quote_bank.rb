@@ -1,5 +1,6 @@
 require_relative 'config/application'
 
+QuoteView.welcome_message
 begin
-  QuoteView.intro_list_commands
+  QuoteView.return_options_screen
 end while Controller.run!(gets.chomp.split(" "))
