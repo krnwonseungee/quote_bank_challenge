@@ -31,7 +31,7 @@ end
 
 desc "Starts the application with introductory message"
 task "run" do
-  exec "irb -r./quotebank.rb"
+  exec "irb -r./quote_bank.rb"
 end
 
 desc "Run the specs"
