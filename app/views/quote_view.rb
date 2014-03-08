@@ -1,13 +1,7 @@
 class QuoteView
   class << self
-    def intro_list_commands
+    def welcome_message
       puts "Welcome to Quot.ly! a random quote to lighten up your day :)"
-      puts "Pick an option:"
-      puts "ADD"
-      puts "DELETE"
-      puts "RANDOM"
-      puts "LIST"
-      puts "QUIT"
     end
 
     def return_options_screen
@@ -25,7 +19,7 @@ class QuoteView
 
     def display(ar_quote_obj)
       ar_quote_obj.each do |quote_obj|
-        puts "#{quote_obj.text} - #{quote_obj.author} #{quote_obj.id}"
+        puts "#{quote_obj.id}. #{quote_obj.text} - #{quote_obj.author}"
       end
     end
 
