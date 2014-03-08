@@ -1,21 +1,52 @@
+require_relative '../../config/application'
+
 class Controller
 
-  def self.run!(command, text = nil)
-    default_list_num = 1
-    case command
-    when "list"
-      TaskView.display(Task.all)
+  def self.run!(input_text_array)
+    # raise unless input_text_array
+    # input_text_array = input_text.split(" ")
+    QuoteView.intro_list_commands
+
+    command = input_text_array[0]
+    case command.downcase
     when "add"
-      Task.create(message: text, list_id: default_list_num)
+      add_quote(input_text_array)
+      QuoteView.add_quote_screen
     when "delete"
-      Task.find(text.to_i).destroy
-    when "complete"
-      t = Task.find(text.to_i)
-      t.completed = true
-      t.save
+      delete_quote(input_text_array)
+      QuoteView.delete_quote_screen
+    when "random"
+      ar_quote_obj = Quote.find(rand(Quote.all.length)+1)
+      QuoteView.display(ar_quote_obj)
+    when "list"
+      QuoteView.display(Quote.all)
+    when "quit"
+      QuoteView.exit_screen
+      return false
     else
-      puts "Give me a command!"
+      QuoteView.error_screen
     end
+    return true
   end
 
+  private
+  def add_quote(input_text_array)
+    quote_arr = input_text_array.shift.join(" ")
+    quote_arr.split("\"")
+    quote_arr[1].strip!
+    Quote.create(text: quote_arr[0], author: quote_arr[1])
+  end
+
+  def delete_quote(input_text_array)
+    # input_text_array
+  end
+
+
 end
+
+# Controller.run!
+
+# ar_quote_obj
+#   quote_obj
+#     message
+# end
