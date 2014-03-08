@@ -1,5 +1,5 @@
 require_relative 'config/application'
 
-while Controller.run!(gets.chomp.split(" "))
-
-end
+begin
+  QuoteView.intro_list_commands
+end while Controller.run!(gets.chomp.split(" "))
