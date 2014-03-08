@@ -20,7 +20,11 @@ class QuoteView
       puts "Please select a valid option."
     end
 
-    def display(ar_quote_obj)
+    def display(quote_obj)
+      puts "#{quote_obj.id}. #{quote_obj.text} - #{quote_obj.author}"
+    end
+
+    def display_all(ar_quote_obj)
       ar_quote_obj.each do |quote_obj|
         puts "#{quote_obj.id}. #{quote_obj.text} - #{quote_obj.author}"
       end
