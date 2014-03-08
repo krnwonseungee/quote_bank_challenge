@@ -35,6 +35,6 @@ task "run" do
 end
 
 desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+RSpec::Core::RakeTask.new(:specs)
 
 task :default  => :specs
