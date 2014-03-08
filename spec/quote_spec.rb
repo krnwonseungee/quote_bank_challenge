@@ -11,13 +11,13 @@ describe Quote do
     Quote.delete_all
     @quote = Quote.new
     @quote.assign_attributes(
-      author: 'Jedi Master Yoda',
-      text:   'Do or do not. There is no try'
+      author: 'George W. Bush',
+      text:   'Mission accomplished.'
       )
   end
 
   it 'creates a new quote object' do
-    expect(@quote.author).to include 'Yoda'
+    expect(@quote.author).to include 'Bush'
   end
 
   it 'saves that new quote to SQLite3' do
@@ -25,12 +25,17 @@ describe Quote do
   end
 
   it 'retrieves that quote from SQLite3' do
-    Quote.exists?(author: 'Jedi Master Yoda')
+    Quote.exists?(author: 'George W. Bush')
   end
 
-  # it 'displays a quote' do
-  #   pending
-  # end
+  it 'displays a quote' do
+    pending
+  end
+
+  it 'deletes the George W. Bush quote just added.' do
+    Controller.delete(@quote.id)
+    expect(Quote.exists?(author: 'George W. Bush')).to be_false
+  end
 
   # it 'retrieves a random quote' do
   #   # 5 times do...
